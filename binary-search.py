@@ -22,3 +22,11 @@ def search(needle, haystack):
 def test_search():
     assert search(2, [1, 2, 3, 4, 5, 6]) == 1, \
         'found needle somewhere in the haystack'
+
+def test_search_first_element():
+    assert search(1, [1,2,3,4,5,6]) == 0, \
+        'search first element'
+
+def test_search_last_element():
+    assert search(6, [1,2,3,4,5,6]) ==5, \
+        'search last element'
