@@ -11,9 +11,9 @@ def search(needle, haystack):
         if middle_element == needle:
             return middle
         elif middle_element < needle:
-            left = middle
+            left = middle + 1
         else:
-            right = middle
+            right = middle - 1
     raise ValueError("Value not in haystack")
 
 # ======= TESTS ==========
@@ -23,10 +23,12 @@ def test_search():
     assert search(2, [1, 2, 3, 4, 5, 6]) == 1, \
         'found needle somewhere in the haystack'
 
+
 def test_search_first_element():
-    assert search(1, [1,2,3,4,5,6]) == 0, \
+    assert search(1, [1, 2, 3, 4, 5, 6]) == 0, \
         'search first element'
 
+
 def test_search_last_element():
-    assert search(6, [1,2,3,4,5,6]) ==5, \
+    assert search(6, [1, 2, 3, 4, 5, 6]) == 5, \
         'search last element'
