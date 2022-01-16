@@ -32,3 +32,13 @@ def test_search_first_element():
 def test_search_last_element():
     assert search(6, [1, 2, 3, 4, 5, 6]) == 5, \
         'search last element'
+
+
+def test_exeption_not_found():
+    from pytest import raises
+    with raises(ValueError):
+        search(-1, [1, 2, 3, 4, 5])
+    with raises(ValueError):
+        search(5, [1, 2, 3, 4])
+    with raises(ValueError):
+        search(2, [1, 3, 4])
