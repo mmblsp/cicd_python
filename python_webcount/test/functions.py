@@ -1,3 +1,4 @@
+from unittest.mock import Mock
 from webcount import most_common_word, most_common_word_in_web_page
 
 
@@ -35,7 +36,6 @@ def test_with_test_double():
 
 
 def test_with_test_mock():
-    from unittest.mock import Mock
     mock_requests = Mock()
     mock_requests.get.return_value.text = 'aa bbb c'
 
@@ -48,4 +48,4 @@ def test_with_test_mock():
         'most_common_word_in_web_page tested with test double'
     assert mock_requests.get.call_count == 1
     assert mock_requests.get.call_args[0][0] \
-        == 'https://python.org','called with rigth URL'
+        == 'https://python.org', 'called with rigth URL'
